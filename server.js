@@ -9,10 +9,10 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('./public/models/user');
-var shows = require('./routes/shows');
+var jobs = require('./routes/jobs');
 var authentication = require('./routes/authentication');
 var signup = require('./routes/signup');
-var subscription = require('./routes/subscription');
+var candidature = require('./routes/candidature');
 
 var app = express();
 
@@ -54,10 +54,10 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, function(email, passw
   });
 }));
 
-app.use('/api', shows)
+app.use('/api', jobs)
 app.use('/api', authentication)
 app.use('/api', signup)
-app.use('/api', subscription)
+app.use('/api', candidature)
 
 app.get('*',require('./routes/default'))
 
@@ -65,12 +65,6 @@ app.use(function(err, req, res, next) {
   console.error(err.stack);
   res.send(500, { message: err.message });
 });
-
-app._router.stack.forEach(function(r){
-  if (r.route && r.route.path){
-    console.log(r.route.path)
-  }
-})
 
 app.listen(app.get('port'), function() {
   mongoose.connect('localhost');

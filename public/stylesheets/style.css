@@ -179,7 +179,7 @@ td, th {
     display: none; }
   .btn > .caret, .dropup > .btn > .caret {
     border-top-color: #000 !important; }
-  .label, .genres li {
+  .label, .technologies li {
     border: 1px solid #000; }
   .table {
     border-collapse: collapse !important; }
@@ -3519,7 +3519,7 @@ tbody.collapse.in {
     background-color: #fff;
     cursor: false; }
 
-.label, .genres li {
+.label, .technologies li {
   display: inline;
   padding: .2em .6em .3em;
   font-size: 75%;
@@ -3530,9 +3530,9 @@ tbody.collapse.in {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: .25em; }
-  .label:empty, .genres li:empty {
+  .label:empty, .technologies li:empty {
     display: none; }
-  .btn .label, .btn .genres li, .genres .btn li {
+  .btn .label, .btn .technologies li, .technologies .btn li {
     position: relative;
     top: -1px; }
 
@@ -3541,9 +3541,9 @@ a.label:hover, a.label:focus {
   text-decoration: none;
   cursor: pointer; }
 
-.label-default, .genres li {
+.label-default, .technologies li {
   background-color: #777777; }
-  .label-default[href]:hover, .genres li[href]:hover, .label-default[href]:focus, .genres li[href]:focus {
+  .label-default[href]:hover, .technologies li[href]:hover, .label-default[href]:focus, .technologies li[href]:focus {
     background-color: #5e5e5e; }
 
 .label-primary {
@@ -4922,11 +4922,11 @@ em {
     .alphabet li:hover {
       color: #1d7cf4; }
 
-.genres {
+.technologies {
   cursor: pointer; }
-  .genres li {
+  .technologies li {
     margin-right: 5px; }
-    .genres li:active {
+    .technologies li:active {
       box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.25); }
 
 .jumbotron {
@@ -4991,7 +4991,7 @@ em {
   text-transform: uppercase;
   background-color: #f6f6f6; }
 
-.label, .genres li {
+.label, .technologies li {
   display: inline-block;
   margin-bottom: 5px;
   padding: 4px 8px;
@@ -5001,11 +5001,11 @@ em {
   transition: 0.1s all;
   -webkit-font-smoothing: antialiased; }
 
-.label-default, .genres li {
+.label-default, .technologies li {
   background-color: #e4e7ec;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
   color: #90939a; }
-  .label-default:hover, .genres li:hover {
+  .label-default:hover, .technologies li:hover {
     background-color: #90939a;
     color: #f4f6f8;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2); }

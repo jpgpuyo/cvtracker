@@ -1,19 +1,19 @@
 angular.module('MyApp')
-  .controller('AddCtrl', ['$scope', '$alert', 'Show', function($scope, $alert, Show) {
-    $scope.addShow = function() {
-      Show.save({ showName: $scope.showName },
+  .controller('AddCtrl', ['$scope', '$alert', 'Job', function($scope, $alert, Job) {
+    $scope.addJob = function() {
+      Job.save({ jobCategory: $scope.jobCategory },
         function() {
-          $scope.showName = '';
+          $scope.jobCategory = '';
           $scope.addForm.$setPristine();
           $alert({
-            content: 'TV show has been added.',
+            content: 'Job has been added.',
             placement: 'top-right',
             type: 'success',
             duration: 3
           });
         },
         function(response) {
-          $scope.showName = '';
+          $scope.jobCategory = '';
           $scope.addForm.$setPristine();
           $alert({
             content: response.data.message,

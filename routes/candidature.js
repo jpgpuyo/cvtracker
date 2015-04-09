@@ -1,34 +1,34 @@
 var express = require('express');
 var router = express.Router();
-var Show = require('../public/models/show')
+var Job = require('../public/models/job')
 var auth = require('../helpers/auth')
 
-router.route('/subscribe')
+router.route('/takeJob')
   .post(auth.ensureAuthenticated, 
         function(req, res, next) {
-          Show.findById(req.body.showId, function(err, show) {
+          Job.findById(req.body.jobId, function(err, job) {
             
             if (err) return next(err);
             
-            show.subscribers.push(req.user.id);
+            job.candidates.push(req.user.id);
             
-            show.save(function(err) {
+            job.save(function(err) {
               if (err) return next(err);
               res.send(200);
             });
         });
   });
       
-router.route('/unsubscribe')
+router.route('/discardJob')
   .post(auth.ensureAuthenticated, 
         function(req, res, next) {
-          Show.findById(req.body.showId, function(err, show) {
+          Job.findById(req.body.jobId, function(err, job) {
             if (err) return next(err);
           
-            var index = show.subscribers.indexOf(req.user.id);
-            show.subscribers.splice(index, 1);
+            var index = job.candidates.indexOf(req.user.id);
+            job.candidates.splice(index, 1);
           
-            show.save(function(err) {
+            job.save(function(err) {
               if (err) return next(err);
               res.send(200);
             });

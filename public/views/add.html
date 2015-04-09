@@ -1,12 +1,12 @@
 <div class="container">
   <div class="panel panel-default">
-    <div class="panel-heading">Add TV Show</div>
+    <div class="panel-heading">Add Job</div>
     <div class="panel-body">
-      <form class="form" method="post" ng-submit="addShow()" name="addForm">
-        <div class="form-group" ng-class="{ 'has-success' : addForm.showName.$valid && addForm.showName.$dirty, 'has-error' : addForm.showName.$invalid && addForm.showName.$dirty }">
-          <input class="form-control" type="text" name="showName" ng-model="showName" placeholder="Enter TV show name" required autofocus>
-          <div class="help-block text-danger" ng-if="addForm.showName.$dirty" ng-messages="addForm.showName.$error">
-            <div ng-message="required">TV show name is required.</div>
+      <form class="form" method="post" ng-submit="addJob()" name="addForm">
+        <div class="form-group" ng-class="{ 'has-success' : addForm.jobCategory.$valid && addForm.jobCategory.$dirty, 'has-error' : addForm.jobCategory.$invalid && addForm.jobCategory.$dirty }">
+          <input class="form-control" type="text" name="jobCategory" ng-model="jobCategory" placeholder="Enter job name" required autofocus>
+          <div class="help-block text-danger" ng-if="addForm.jobCategory.$dirty" ng-messages="addForm.jobCategory.$error">
+            <div ng-message="required">Job name is required.</div>
           </div>
         </div>
         <button class="btn btn-primary" type="submit" ng-disabled="addForm.$invalid">Add</button>
