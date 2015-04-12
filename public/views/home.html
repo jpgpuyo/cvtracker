@@ -1,10 +1,5 @@
 <div class="jumbotron">
   <div class="container">
-    <ul class="alphabet">
-      <li ng-repeat="char in alphabet">
-        <span ng-click="filterByAlphabet(char)">{{char}}</span>
-      </li>
-    </ul>
     <ul class="technologies">
       <li ng-repeat="technology in technologies">
         <span ng-click="filterByTechnology(technology)">{{technology}}</span>
@@ -18,16 +13,16 @@
     <div class="panel-heading">
       {{headingTitle}}
       <div class="pull-right">
-        <input class="search" type="text" ng-model="query.category" placeholder="Search...">
+        <input class="search" type="text" ng-model="query" placeholder="Search...">
       </div>
     </div>
     <div class="panel-body">
-      <div class="row show-list">
-        <div class="col-xs-4 col-md-3" ng-repeat="job in jobs | filter:query">
-          <div class="text-center">
-            <a href="/jobs/{{job._id}}">{{job.category}}</a>
-          </div>
-        </div>
+      <div class="list-group">
+        <a href="/jobs/{{job._id}}" class="list-group-item" ng-repeat="job in jobs | filter:query">
+            <h4 class="list-group-item-heading">{{job.category}} <small><mark>{{job.enterprise}}<mark></mark></small></h4>
+            <p class="text-info">{{job.technology}}, {{job.category}}</p>
+            <p class="list-group-item-text">{{job.description}}</p>
+        </a>
       </div>
     </div>
   </div>

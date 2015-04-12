@@ -24,9 +24,10 @@ router.route('/jobs')
   
   .post(function(req, res, next) {
     var job = new Job({
-        enterprise: req.body.enterprise,
         category: req.body.category,
-        technology: req.body.technology
+        enterprise: req.body.enterprise,
+        technology: req.body.technology,
+        description: req.body.description
     });
     
     job.save(function(err) {

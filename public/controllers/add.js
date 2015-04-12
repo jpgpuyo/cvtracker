@@ -5,9 +5,10 @@ angular.module('MyApp')
     
     $scope.addJob = function() {
       Job.save({
-                enterprise: $scope.enterprise,
                 category: $scope.category,
-                technology: $scope.technology
+                enterprise: $scope.enterprise,
+                technology: $scope.technology,
+                description: $scope.description
         },
         function() {
           $scope.jobCategory = '';
