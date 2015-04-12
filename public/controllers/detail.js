@@ -5,10 +5,12 @@ angular.module('MyApp')
         $scope.job = job;
 
         $scope.isCandidate = function() {
+          console.log("IS CANDIDATE")
           return $scope.job.candidates.indexOf($rootScope.currentUser._id) !== -1;
         };
 
         $scope.takeJob = function() {
+          console.log("TAKE JOB")
           Candidature.takeJob(job).success(function() {
             $scope.job.candidates.push($rootScope.currentUser._id);
           });
