@@ -4,7 +4,7 @@ var xml2js = require('xml2js');
 var async = require('async');
 var request = require('request');
 var _ = require('lodash');
-var Job = require('../public/models/job');
+var Job = require('../models/job');
 
 router.route('/jobs')
   .get(function(req, res, next) {
@@ -24,7 +24,9 @@ router.route('/jobs')
   
   .post(function(req, res, next) {
     var job = new Job({
-        category: req.body.jobCategory
+        enterprise: req.body.enterprise,
+        category: req.body.category,
+        technology: req.body.technology
     });
     
     job.save(function(err) {

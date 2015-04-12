@@ -8,13 +8,18 @@ var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-var User = require('./public/models/user');
+var User = require('./models/user');
 var jobs = require('./routes/jobs');
 var authentication = require('./routes/authentication');
 var signup = require('./routes/signup');
 var candidature = require('./routes/candidature');
 
 var app = express();
+
+require('coffee-script/register');
+var penguin = require('penguin')
+var admin = new penguin.Admin();
+admin.setupApp(app)
 
 app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));

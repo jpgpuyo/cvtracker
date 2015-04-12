@@ -4,7 +4,7 @@ var jobSchema = new mongoose.Schema({
   enterprise: String,
   category: String,
   description: String,
-  technology: [String],
+  technology: String,
   candidate: [{
     type: mongoose.Schema.Types.ObjectId, ref: 'User'
   }]

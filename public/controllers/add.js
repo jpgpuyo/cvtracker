@@ -1,7 +1,14 @@
 angular.module('MyApp')
   .controller('AddCtrl', ['$scope', '$alert', 'Job', function($scope, $alert, Job) {
+    
+    $scope.technologies = Job.alltechnologies();
+    
     $scope.addJob = function() {
-      Job.save({ jobCategory: $scope.jobCategory },
+      Job.save({
+                enterprise: $scope.enterprise,
+                category: $scope.category,
+                technology: $scope.technology
+        },
         function() {
           $scope.jobCategory = '';
           $scope.addForm.$setPristine();

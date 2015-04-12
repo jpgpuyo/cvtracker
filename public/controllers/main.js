@@ -5,11 +5,7 @@ angular.module('MyApp')
       'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
       'Y', 'Z'];
 
-    $scope.technologies = ['Action', 'Adventure', 'Animation', 'Children', 'Comedy',
-      'Crime', 'Documentary', 'Drama', 'Family', 'Fantasy', 'Food',
-      'Home and Garden', 'Horror', 'Mini-Series', 'Mystery', 'News', 'Reality',
-      'Romance', 'Sci-Fi', 'Sport', 'Suspense', 'Talk Show', 'Thriller',
-      'Travel'];
+    $scope.technologies = Job.alltechnologies();
 
     $scope.headingTitle = 'Top 12 Jobs';
 

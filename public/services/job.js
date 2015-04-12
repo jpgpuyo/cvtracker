@@ -1,4 +1,10 @@
 angular.module('MyApp')
   .factory('Job', ['$resource', function($resource) {
-    return $resource('/api/jobs/:_id');
+    var Job = $resource('/api/jobs/:_id');
+    
+    Job.alltechnologies = function(){
+      return ['Java', 'Smallworld'];
+    }
+    
+    return Job;
   }]);

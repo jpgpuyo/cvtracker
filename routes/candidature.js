@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Job = require('../public/models/job')
+var Job = require('../models/job')
 var auth = require('../helpers/auth')
 
 router.route('/takeJob')
